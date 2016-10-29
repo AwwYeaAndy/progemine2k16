@@ -1,5 +1,6 @@
 public class Silinder extends Kujundid {
-	double raadius, pindala, murdosaruumist;
+	double raadius, pindala, murdosaruumist, ruumala;
+	String nimi;
 	public Silinder(double raadius, double murdosaruumist, double korgus){
 		super(korgus);
 		this.raadius = raadius;
@@ -12,13 +13,21 @@ public class Silinder extends Kujundid {
 	public double murdPindala(){
 		if(murdosaruumist == 0.5){
 			pindala = pohjaPindala()*0.5;
+		} else {
+			pindala = pohjaPindala();
 		}
 		return pindala;
 	}
 	public double murdRuumala(){
 		if(murdosaruumist == 0.5){
-			pindala = ruumala()/2;
+			ruumala = ruumala()/2;
+		} else {
+			ruumala = ruumala();
 		}
-		return pindala;
+		return ruumala;
+	}
+	public String kysiObjektNimi(){
+		nimi = "Silinder";
+		return nimi;
 	}
 }
